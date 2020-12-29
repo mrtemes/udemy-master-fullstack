@@ -25,6 +25,7 @@ Route::get('/welcome', function () {
 Route::get('/pruebas/{nombre?}', function($nombre = null) {
     $texto = '<h2>Texto desde una ruta.</h2>';
     $texto .= 'Nombre: '.$nombre;
+    
     return view('pruebas', array(
         'texto' => $texto
     ));

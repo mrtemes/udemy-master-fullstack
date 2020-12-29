@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,19 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return '<h1>Hola mundo con Laravel.<h1>';
+    return '<h1>Hola mundo con Laravel.</h1>';
 });
+
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/pruebas/{nombre?}', function ($nombre = null) {
+Route::get('/pruebas/{nombre?}', function($nombre = null) {
     $texto = '<h2>Texto desde una ruta.</h2>';
-    $texto .= 'nombre: '.$nombre;
-    return view('pruebas', array (
+    $texto .= 'Nombre: '.$nombre;
+    return view('pruebas', array(
         'texto' => $texto
     ));
 });
-
-Route::get('/animales', 'PruebasController@index');
